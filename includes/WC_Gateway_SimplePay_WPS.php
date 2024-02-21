@@ -91,6 +91,9 @@ if ( class_exists( 'WC_Payment_Gateway' ) ) {
 					if(class_exists('WC_Seq_Order_Number')) {
 						$order_id = wc_sequential_order_numbers()->find_order_by_order_number( $result['o'] );
 
+					} elseif(class_exists('WC_Seq_Order_Number_Pro')) {
+						$order_id = wc_seq_order_number_pro()->find_order_by_order_number( $result['o'] );
+
 					} else {
 						$order_id = $result['o'];
 					}
